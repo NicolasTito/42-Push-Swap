@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/07 17:17:07 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/09 15:33:34 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ INCLUDES = -I libft/includes -I ./includes
 OBJ_PATH = ./objs
 SRC_PATH = ./src
 
-SRC_NAME =
+SRC_NAME = main.c\
+			swap.c\
+			check_init.c\
 
 SRC_BONUS =
 
