@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_init.c                                    :+:      :+:    :+:   */
+/*   check_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:45:21 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/09 15:17:54 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:53:53 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ int	check_repeat_number(char **av)
 		j = i + 1;
 		while (av[j])
 		{
-			if (ft_strlen(av[i]) == ft_strlen(av[j]))
-			{
-				if (ft_strncmp(av[i], av[j], ft_strlen(av[i])) == 0)
+				if (ft_strlen(av[i]) == ft_strlen(av[j]))
 				{
-						write(1, "Error\n", 7);
-						return (0);
+					if (ft_strncmp(av[i], av[j], ft_strlen(av[i])) == 0)
+					{
+							write(1, "Error\n", 7);
+							return (0);
+					}
 				}
-			}
 			j++;
 		}
 		i++;

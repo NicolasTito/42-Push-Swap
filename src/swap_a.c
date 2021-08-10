@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:14:40 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/10 17:31:08 by nide-mel         ###   ########.fr       */
+/*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
+/*   Updated: 2021/08/10 17:23:13 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "../libft/includes/libft.h"
-typedef struct	s_l
+void	sa_sb(int *stack, int size, char c)
 {
-	int	size_a;
-	int	size_b;
-	int	top_b;
-	int	bottom_a;
-}				t_l;
+	int	temp;
 
-int	check_int(int ac, char **av, int *stack_a, int *stack_b);
-
-#endif
+	if(size < 2)
+		return ;
+	temp = stack[0];
+	stack[0] = stack[1];
+	stack[1] = temp;
+	write(1, "sa\n", 3);
+}

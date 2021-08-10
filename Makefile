@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/09 15:33:34 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/10 17:42:49 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,7 @@ OBJ_PATH = ./objs
 SRC_PATH = ./src
 
 SRC_NAME = main.c\
-			swap.c\
-			check_init.c\
+			check_init.c
 
 SRC_BONUS =
 
