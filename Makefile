@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
+#    By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/10 17:42:49 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/10 19:48:15 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,13 +62,11 @@ clean:
 	@make clean -C $(LIB_PATH)
 	@rm -rf $(OBJ)
 	@rm -rf $(OBJ2)
-	@echo "\033[33mall $(NAME) and $(NAME2) .o files are removed\033[0m"
 
 fclean: clean
 	@make fclean -C $(LIB_PATH)
 	@rm -f $(NAME) $(NAME2)
-	@echo "\033[31m$(NAME) and $(NAME2) is deleted\033[0m"
-
+	
 re: fclean all
 
 .PHONY: all, clean, fclean, re

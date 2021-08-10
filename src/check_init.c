@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:45:21 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/10 15:53:53 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/10 19:49:06 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	check_repeat_number(char **av)
 	return (1);
 }
 
-int	check_int(int ac, char **av, int *stack_a, int *stack_b)
+int	check_int(char **av, int *stack_a, int *stack_b)
 {
 	if (!check_digit(av) || !check_repeat_number(av))
 	{
