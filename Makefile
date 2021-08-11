@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/11 03:55:10 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/11 06:40:57 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ LIBFT_PATH = ./libft
 
 INCLUDES = -I libft/includes -I ./includes
 
-OBJ_PATH = ./objs
 SRC_PATH = ./src
 
 SRC_NAME = main.c\
@@ -34,16 +33,17 @@ SRC_NAME = main.c\
 			swap_b.c\
 			organize.c
 
-SRC_BONUS =
+SRC_BONUS = main.c\
+			check_init.c\
+			swap_a.c\
+			swap_b.c\
+			organize.c
 
-OBJ_NAME = $(SRC_NAME:.c=.o)
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
+OBJ = $(SRC_NAME:.c=.o)
+OBJB = $(SRC_BONUS:.c=.o)
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 SRCB = $(addprefix $(SRC_PATH)/, $(SRC_BONUS))
-
-OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
-OBJB = $(addprefix $(OBJ_PATH)/, $(OBJ_BONUS))
 
 all : $(NAME) $(NAME_BONUS)
 
@@ -55,15 +55,17 @@ $(NAME): $(OBJ)
 $(NAME_BONUS): $(OBJB)
 	@$(CC) $(CFLAGS) $(OBJB) $(INCLUDES) $(LIBFT) -o $(NAME_BONUS)
 	@echo "\x1b[36m[CHECKER COMPILED]\x1b[0m"
+	@make fclean -C $(LIBFT_PATH)
+	@rm -rf $(OBJ)
+	@rm -rf $(OBJB)
 
-$(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
-	@mkdir -p $(OBJ_PATH)
+%.o : $(SRC_PATH)/%.c
 	@$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
 
 clean:
 	@make clean -C $(LIBFT_PATH)
 	@rm -rf $(OBJ)
-	@rm -rf $(OBJ2)
+	@rm -rf $(OBJB)
 	@echo "\033[33mall $(NAME) and $(NAME_BONUS) .o files are removed\033[0m"
 
 fclean: clean

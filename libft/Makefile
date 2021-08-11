@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/27 14:57:28 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/07 17:05:22 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/11 06:43:12 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,16 +74,13 @@ $(NAME): $(OBJ)
 	@echo "\x1b[36m[LIBFT COMPILED]\x1b[0m"
 
 %.o: %.c
-	@echo "\x1b[32mSources compiling...\x1b[0m"
 	@$(CC) $(CFLAGS) $(INC) -o $@ -c $< $(CFLAGS)
 
 clean:
 	@rm -f $(OBJ)
-	@echo "\x1b[33mall libft .o files are removed\x1b[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\x1b[31m$(NAME) is deleted\x1b[0m"
 
 re: fclean all
 
