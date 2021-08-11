@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/10 19:48:15 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/10 23:28:44 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC_PATH = ./src
 SRC_NAME = main.c\
 			check_init.c
 
-SRC_BONUS =
+SRC_BONUS = main.c\
+			check_init.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
@@ -50,7 +51,6 @@ $(NAME): $(OBJ)
 	@echo "\x1b[36m[PUSH_SWAP COMPILED]\x1b[0m"
 
 $(NAME_BONUS): $(OBJB)
-	@make -C $(LIBFT_PATH)
 	@$(CC) $(CFLAGS) $(OBJB) $(INCLUDES) $(LIBFT) -o $(NAME_BONUS)
 	@echo "\x1b[36m[CHECKER COMPILED]\x1b[0m"
 
@@ -59,14 +59,16 @@ $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
 	@$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
 
 clean:
-	@make clean -C $(LIB_PATH)
+	@make clean -C $(LIBFT_PATH)
 	@rm -rf $(OBJ)
 	@rm -rf $(OBJ2)
+	@echo "\033[33mall $(NAME) and $(NAME_BONUS) .o files are removed\033[0m"
 
 fclean: clean
-	@make fclean -C $(LIB_PATH)
-	@rm -f $(NAME) $(NAME2)
-	
+	@make fclean -C $(LIBFT_PATH)
+	@rm -f $(NAME) $(NAME_BONUS)
+	@echo "\033[31m$(NAME) and $(NAME_BONUS) is deleted\033[0m"
+
 re: fclean all
 
 .PHONY: all, clean, fclean, re

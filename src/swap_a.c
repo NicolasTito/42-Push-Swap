@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/10 19:56:54 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/10 23:41:51 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	sa_sb(int *stack, int size, char c)
 {
@@ -47,9 +47,9 @@ void	ra_rb(int *stack, int size, char c)
 	if (size < 2)
 		return ;
 	temp = stack[0];
-	while(++i < size)
+	while(++i < size - 2)
 		stack[i] = stack[i + 1];
-	stack[size] = temp;
+	stack[size - 1] = temp;
 	if (c = 'a')
 		write(1, "ra\n", 3);
 	if (c = 'b')
@@ -58,7 +58,7 @@ void	ra_rb(int *stack, int size, char c)
 		return ;
 }
 
-void rr(int *stack_a, int *stack_b, t_inf *s_l)
+void	rr(int *stack_a, int *stack_b, t_inf *s_l)
 {
 	if (s_l->size_a < 2 || s_l->size_b < 2)
 		return ;
