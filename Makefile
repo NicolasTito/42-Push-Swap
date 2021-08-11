@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/10 23:28:44 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/11 03:55:10 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,12 @@ OBJ_PATH = ./objs
 SRC_PATH = ./src
 
 SRC_NAME = main.c\
-			check_init.c
+			check_init.c\
+			swap_a.c\
+			swap_b.c\
+			organize.c
 
-SRC_BONUS = main.c\
-			check_init.c
+SRC_BONUS =
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)

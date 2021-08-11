@@ -6,11 +6,24 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:45:21 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/11 02:03:48 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/11 05:04:16 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_order(int *stack_a, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size - 1)
+	{
+		if (stack_a[i] > stack_a[i + 1])
+			return (FALSE);
+	}
+	return (TRUE);
+}
 
 int	check_digit(char **av)
 {

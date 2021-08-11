@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/11 02:01:49 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/11 02:46:33 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	rrr(int *stack_a, int *stack_b, t_inf *s_l)
 	write(1, "rrr\n", 4);
 }
 
-void	pa(int *stack_a, int *stack_b, t_inf *s_l)
+void	pb(int *stack_a, int *stack_b, t_inf *s_l)
 {
 	int	temp;
 	int	i;
@@ -61,7 +61,7 @@ void	pa(int *stack_a, int *stack_b, t_inf *s_l)
 	write(1, "pa\n", 3);
 }
 
-void	pb(int *stack_a, int *stack_b, t_inf *s_l)
+void	pa(int *stack_a, int *stack_b, t_inf *s_l)
 {
 	int	temp;
 	int	i;

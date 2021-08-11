@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/11 02:04:52 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/11 05:04:01 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,4 @@ void	rr(int *stack_a, int *stack_b, t_inf *s_l)
 		return ;
 	ra_rb (stack_a, s_l->size_a, RR);
 	ra_rb (stack_b, s_l->size_b, RR);
+}
