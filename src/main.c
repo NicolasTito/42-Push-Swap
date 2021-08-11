@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:56 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/11 04:49:42 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/11 12:02:49 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	push_swap(int *stack_a, int *stack_b, t_inf *s_l)
 
 void	start_stack(int *stack_a, int *stack_b, int ac, char **av)
 {
-	int	i;
-	int	j;
+	int			i;
+	int			j;
+	long int	temp;
 
 	i = -1;
 	while (++i < ac - 1)
@@ -35,7 +36,13 @@ void	start_stack(int *stack_a, int *stack_b, int ac, char **av)
 	i = 0;
 	j = 1;
 	while (i < ac - 1)
-		stack_a[i++] = ft_atoi(av[j++]);
+	{
+		temp = ft_atoi(av[j++]);
+
+		if (temp > 2147483647 || temp < -21474836478)
+			exit_program(stack_a, stack_b);
+		stack_a[i++] = (int)temp;
+	}
 	i = -1;
 	while (++i < ac - 1)
 	{

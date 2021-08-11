@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:14:40 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/11 04:03:30 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/11 11:15:06 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	stack_inf
 	int	size_b;
 }				t_inf;
 
+void	exit_program(int *stack_a, int *stack_b);
 int		check_repeat_number(char **av);
 int		check_digit(char **av);
 int		check_order(int *stack_a, int size);
