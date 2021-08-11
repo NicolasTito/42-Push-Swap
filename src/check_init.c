@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:45:21 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/10 19:49:06 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/11 02:03:48 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	check_digit(char **av)
 			if (ft_isdigit(av[i][j]) == 0)
 			{
 				write(1, "Error\n", 7);
-				return (0);
+				return (FALSE);
 			}
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (TRUE);
 }
 
 int	check_repeat_number(char **av)
@@ -48,28 +48,17 @@ int	check_repeat_number(char **av)
 		j = i + 1;
 		while (av[j])
 		{
-				if (ft_strlen(av[i]) == ft_strlen(av[j]))
+			if (ft_strlen(av[i]) == ft_strlen(av[j]))
+			{
+				if (ft_strncmp(av[i], av[j], ft_strlen(av[i])) == 0)
 				{
-					if (ft_strncmp(av[i], av[j], ft_strlen(av[i])) == 0)
-					{
-							write(1, "Error\n", 7);
-							return (0);
-					}
+					write(1, "Error\n", 7);
+					return (FALSE);
 				}
+			}
 			j++;
 		}
 		i++;
 	}
-	return (1);
-}
-
-int	check_int(char **av, int *stack_a, int *stack_b)
-{
-	if (!check_digit(av) || !check_repeat_number(av))
-	{
-		free (stack_a);
-		free (stack_b);
-		return (0);
-	}
-	return (1);
+	return (TRUE);
 }
