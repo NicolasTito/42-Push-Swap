@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:56 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/11 12:02:49 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/12 22:20:50 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	start_stack(int *stack_a, int *stack_b, int ac, char **av)
 	while (i < ac - 1)
 	{
 		temp = ft_atoi(av[j++]);
-
 		if (temp > 2147483647 || temp < -21474836478)
 			exit_program(stack_a, stack_b);
 		stack_a[i++] = (int)temp;

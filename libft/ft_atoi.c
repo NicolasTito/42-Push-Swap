@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 14:48:06 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/11 12:01:20 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/12 22:20:30 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long int	ft_atoi(const char *str)
 {
-	int		i;
-	int		is_n;
-	long int		rest;
+	int			i;
+	int			is_n;
+	long int	rest;
 
 	i = 0;
 	is_n = 1;
