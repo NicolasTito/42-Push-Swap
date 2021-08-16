@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:56 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/12 22:20:50 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 02:08:05 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	start_program(int ac, char **av)
 {
 	int		*stack_a;
 	int		*stack_b;
+	int		*array;
 	t_inf	s_l;
 
 	stack_a = (int *)malloc(sizeof(int) + ac - 1);
@@ -67,7 +68,9 @@ void	start_program(int ac, char **av)
 		return ;
 	}
 	start_stack(stack_a, stack_b, ac, av);
+	array = sort_number(stack_a, ac - 1);
 	push_swap(stack_a, stack_b, &s_l);
+	free(array);
 	free(stack_a);
 	free(stack_b);
 }
