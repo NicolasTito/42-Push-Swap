@@ -6,13 +6,13 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:56 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 02:08:05 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 06:28:05 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int *stack_a, int *stack_b, t_inf *s_l)
+void	push_swap(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	if (check_order(stack_a, s_l->size_a) == TRUE)
 		return ;
@@ -59,17 +59,16 @@ void	start_program(int ac, char **av)
 
 	stack_a = (int *)malloc(sizeof(int) + ac - 1);
 	stack_b = (int *)malloc(sizeof(int) + ac - 1);
-	s_l.size_a = ac - 1;
-	s_l.size_b = 0;
 	if (check_digit(av) == FALSE || check_repeat_number(av) == FALSE)
 	{
 		free(stack_a);
 		free(stack_b);
 		return ;
 	}
+	start_struct(ac, &s_l);
 	start_stack(stack_a, stack_b, ac, av);
-	array = sort_number(stack_a, ac - 1);
-	push_swap(stack_a, stack_b, &s_l);
+	sort_number(array, stack_a, ac - 1);
+	push_swap(stack_a, stack_b, array, &s_l);
 	free(array);
 	free(stack_a);
 	free(stack_b);
