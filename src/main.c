@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:56 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 09:34:45 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 10:30:07 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ void	start_stack(int *stack_a, int *stack_b, int ac, char **av)
 		stack_a[i] = 0;
 		stack_b[i] = 0;
 	}
-	i = 0;
+	i = -1;
 	j = 1;
-	while (i < ac - 1)
+	while (++i < ac - 1)
 	{
 		temp = ft_atoi(av[j++]);
 		if (temp > 2147483647 || temp < -21474836478)
 			exit_program(stack_a, stack_b);
-		stack_a[i++] = (int)temp;
+		stack_a[i] = (int)temp;
 	}
 	i = -1;
 	while (++i < ac - 1)
@@ -54,10 +54,6 @@ void	start_stack(int *stack_a, int *stack_b, int ac, char **av)
 		if (stack_a[i] == 0)
 			stack_a[i] = 1;
 	}
-		int n = -1;
-		printf("\n\n");
-		while (++n < ac - 1)
-		printf("AA: %d\n", stack_a[j]);
 }
 
 void	start_program(int ac, char **av)
@@ -67,9 +63,9 @@ void	start_program(int ac, char **av)
 	int		*array;
 	t_inf	s_l;
 
-	stack_a = (int *)malloc(sizeof(int) + ac - 1);
-	stack_b = (int *)malloc(sizeof(int) + ac - 1);
-	array = (int *)malloc(sizeof(int) + ac - 1);
+	stack_a = (int *)malloc(sizeof(int) * (ac - 1));
+	stack_b = (int *)malloc(sizeof(int) * (ac - 1));
+	array = (int *)malloc(sizeof(int) * (ac - 1));
 	s_l.size = ac - 1;
 
 	if (check_digit(av) == FALSE || check_repeat_number(av) == FALSE)

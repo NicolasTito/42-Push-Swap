@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 09:23:35 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 10:51:36 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,10 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	int	*numberChunk;
 
 	i = 0;
-	numberChunk = (int *)malloc(sizeof(int) + s_l->sizeChunk);
+	numberChunk = (int *)malloc(sizeof(int) * s_l->sizeChunk);
 	number_chunk(numberChunk, array, s_l);
-	while (stack_a[0] < s_l->sizeChunk)
+	while (stack_a[0] <= s_l->sizeChunk)
 		pb(stack_a, stack_b, s_l);
-	free(numberChunk);
 }
 
 void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)

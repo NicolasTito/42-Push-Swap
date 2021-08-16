@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 15:00:06 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 09:31:10 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 10:36:34 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,18 @@ void	number_chunk(int *numberChunk, int *array, t_inf *s_l)
 		numberChunk[i] = array[i];
 }
 
-static void	sort(int *array, int size)
+void	sort_number(int *array, int *stack_a, int size)
 {
-	int	temp;
 	int	i;
+	int	temp;
 
 	i = -1;
 	while (++i < size)
+	{
+		array[i] = stack_a[i];
+	}
+	i = -1;
+	while (++i < size - 1)
 	{
 		if (array[i] > array[i + 1])
 		{
@@ -37,21 +42,7 @@ static void	sort(int *array, int size)
 			i = -1;
 		}
 	}
-}
-
-void	sort_number(int *array, int *stack_a, int size)
-{
-	int	i;
-
 	i = -1;
-	if (++i < size)
-		array[i] = 0;
-	i = -1;
-	while (++i <= size)
-		array[i] = stack_a[i];
-	sort(array, size);
-		//Apagar
-	int j = -1;
-	while (++j < size)
-		printf("BB: %d\n", stack_a[j]);
+	while (++i < size)
+		printf("%d\n", array[i]);
 }
