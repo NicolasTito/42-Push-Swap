@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:09:22 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 07:11:56 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 09:23:24 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	start_struct(int ac, t_inf *s_l)
 {
-	s_l->size = ac - 1;
 	s_l->size_a = ac - 1;
 	s_l->size_b = 0;
 	s_l->chunk = 1;

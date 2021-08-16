@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:14:40 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 02:07:22 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 09:20:40 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,19 @@
 # include "../libft/includes/libft.h"
 typedef struct stack_inf
 {
+	int	size;
 	int	size_a;
 	int	size_b;
-	int	*order;
+	int	chunk;
+	int	sizeChunk;
+	int	chunkCopyInit;
+	int	chunKCopyFin;
 }		t_inf;
 
 void	exit_program(int *stack_a, int *stack_b);
 int		check_repeat_number(char **av);
+void	start_struct(int ac, t_inf *s_l);
+void	init_chunk(t_inf *s_l);
 int		check_digit(char **av);
 int		check_order(int *stack_a, int size);
 void	sa_sb(int *stack, int size, int c);
@@ -38,7 +44,9 @@ void	rra_rrb(int *stack, int size, int c);
 void	rrr(int *stack_a, int *stack_b, t_inf *s_l);
 void	pa(int *stack_a, int *stack_b, t_inf *s_l);
 void	pb(int *stack_a, int *stack_b, t_inf *s_l);
-void	organize_3(int *stack_a, t_inf **s_l);
-int		*sort_number(int *stack_a, int size);
+void	organize_3(int *stack_a, t_inf *s_l);
+void	sort_number(int *array, int *stack_a, int size);
+void	number_chunk(int *numberChunk, int *array, t_inf *s_l);
+void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 
 #endif

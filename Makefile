@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/16 02:09:00 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/16 09:12:03 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC_NAME = main.c\
 			swap_b.c\
 			organize.c\
 			utils.c\
-			sort_number.c
+			sort_number.c\
+			input_struct.c
 
 SRC_BONUS = main.c\
 			check_init.c\
@@ -41,7 +42,8 @@ SRC_BONUS = main.c\
 			swap_b.c\
 			organize.c\
 			utils.c\
-			sort_number.c
+			sort_number.c\
+			input_struct.c
 
 OBJ = $(SRC_NAME:.c=.o)
 OBJB = $(SRC_BONUS:.c=.o)
