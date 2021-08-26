@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 10:38:54 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 21:25:59 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	pb(int *stack_a, int *stack_b, t_inf *s_l)
 
 	temp = stack_a[0];
 	i = -1;
-	while (++i < s_l->size_a - 2)
+	while (++i < s_l->size_a - 1)
 		stack_a[i] = stack_a[i + 1];
 	i = s_l->size_b + 1;
 	while (--i > 0)
@@ -68,7 +68,7 @@ void	pa(int *stack_a, int *stack_b, t_inf *s_l)
 
 	temp = stack_b[0];
 	i = -1;
-	while (++i < s_l->size_b - 2)
+	while (++i < s_l->size_b - 1)
 		stack_b[i] = stack_b[i + 1];
 	i = s_l->size_a + 1;
 	while (--i > 0)

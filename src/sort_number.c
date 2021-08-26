@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 15:00:06 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 10:36:34 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 20:34:27 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,4 @@ void	sort_number(int *array, int *stack_a, int size)
 			i = -1;
 		}
 	}
-	i = -1;
-	while (++i < size)
-		printf("%d\n", array[i]);
 }

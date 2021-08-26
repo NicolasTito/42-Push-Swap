@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 10:51:36 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/16 21:26:05 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,17 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	numberChunk = (int *)malloc(sizeof(int) * s_l->sizeChunk);
 	number_chunk(numberChunk, array, s_l);
 	while (stack_a[0] <= s_l->sizeChunk)
+	{
 		pb(stack_a, stack_b, s_l);
+		if (stack_b[0] < stack_b[1])
+		{
+			if (stack_a[0] > s_l->sizeChunk && stack_a[1] <= s_l->sizeChunk)
+				ss(stack_a, stack_b, s_l);
+			else
+				sa_sb(stack_b, s_l->size_b, BB);
+		}
+	}
+	free(numberChunk);
 }
 
 void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
@@ -61,4 +71,11 @@ void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 		s_l->chunKCopyFin = s_l->chunKCopyFin + s_l->sizeChunk;
 		s_l->chunkCopyInit = s_l->chunkCopyInit + s_l->sizeChunk;
 	}
+	i = -1;
+	while (++i < s_l->size_a)
+		printf("STACK_A: %d\n",stack_a[i]);
+	i = -1;
+	printf("\n\n");
+	while (++i < s_l->size_b)
+		printf("STACK_B: %d\n",stack_b[i]);
 }
