@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/27 14:57:28 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/11 06:43:12 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/08/26 16:26:51 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ CC = gcc
 NAME = libft.a
 
 PATH_SRC = ./libc/
+
+OBJ_PATH = ./obj
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -64,7 +66,7 @@ SRC = ft_memset.c	\
 	ft_lstnew.c	\
 	ft_lstsize.c	\
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))
 
 all: $(NAME)
 
@@ -73,8 +75,9 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 	@echo "\x1b[36m[LIBFT COMPILED]\x1b[0m"
 
-%.o: %.c
-	@$(CC) $(CFLAGS) $(INC) -o $@ -c $< $(CFLAGS)
+$(OBJ_PATH)/%.o: %.c
+	@mkdir -p obj
+	@$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
 clean:
 	@rm -f $(OBJ)

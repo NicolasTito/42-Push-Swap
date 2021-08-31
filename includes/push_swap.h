@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:14:40 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 09:20:40 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/26 15:40:53 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ void	organize_3(int *stack_a, t_inf *s_l);
 void	sort_number(int *array, int *stack_a, int size);
 void	number_chunk(int *numberChunk, int *array, t_inf *s_l);
 void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l);
+void	organize_stackB(int *stack_a, int *stack_b, int *array, t_inf *s_l);
+void	passNumber(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 
 #endif

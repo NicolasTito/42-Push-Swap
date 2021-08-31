@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:09:22 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/17 06:04:36 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/26 15:27:23 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	start_struct(int ac, t_inf *s_l)
 {
-	s_l->size_a = ac - 1; 
+	s_l->size_a = ac - 1;
 	s_l->size_b = 0;
 	s_l->chunk = 1;
 	s_l->sizeChunk = 1;
@@ -31,5 +31,5 @@ void	init_chunk(t_inf *s_l)
 	else if (s_l->size >= 500)
 		s_l->chunk = 11;
 	s_l->sizeChunk = s_l->size / s_l->chunk;
-	s_l->chunKCopyFin = s_l->sizeChunk;
+	s_l->chunKCopyFin = s_l->sizeChunk - 1;
 }

@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 21:26:05 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/08/26 16:15:22 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	organize_3(int *stack_a, t_inf *s_l)
 		rra_rrb(stack_a, s_l->size_a, AA);
 }
 
+
 void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	int	i;
@@ -45,7 +46,7 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	i = 0;
 	numberChunk = (int *)malloc(sizeof(int) * s_l->sizeChunk);
 	number_chunk(numberChunk, array, s_l);
-	while (stack_a[0] <= s_l->sizeChunk)
+	while (stack_a[0] <= array[s_l->chunKCopyFin])
 	{
 		pb(stack_a, stack_b, s_l);
 		if (stack_b[0] < stack_b[1])
@@ -56,6 +57,7 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 				sa_sb(stack_b, s_l->size_b, BB);
 		}
 	}
+
 	free(numberChunk);
 }
 
