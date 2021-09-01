@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 14:48:06 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/12 22:20:30 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 17:57:30 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ long int	ft_atoi(const char *str)
 	i = 0;
 	is_n = 1;
 	rest = 0;
+	if (str[0] == '0')
+		return (0);
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	if (str[i] == '+' || str[i] == '-')

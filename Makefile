@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+         #
+#    By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/08/26 16:21:15 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/09/01 17:32:16 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRC_NAME = main.c\
 			utils.c\
 			sort_number.c\
 			input_struct.c\
+			organize_chunk.c
 
 SRC_BONUS = main.c\
 			check_init.c\
@@ -46,6 +47,7 @@ SRC_BONUS = main.c\
 			utils.c\
 			sort_number.c\
 			input_struct.c\
+			organize_chunk.c
 
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC_NAME:.c=.o))
 OBJB = $(addprefix $(OBJ_PATH)/, $(SRC_BONUS:.c=.o))

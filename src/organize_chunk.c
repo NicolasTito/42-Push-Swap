@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 13:56:03 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/01 15:50:55 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 18:27:00 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,16 @@ int	verifyTopBot(int *stack_a, int max, int size)
 	counterB = 1;
 	while (stack_a[i] > max)
 	{
+		printf("I: %d\n", i);
 		i++;
 		counterT++;
+		printf ("%d\n",max);
+		printf ("A: %d\n",stack_a[i]);
+		sleep(1);
 	}
-	i = size;
-	while(stack_a[i] > max)
+	while (stack_a[size] > max)
 	{
-		i--;
+		size--;
 		counterB++;
 	}
 	if (counterT <= counterB)
@@ -40,7 +43,7 @@ int	verifyTopBot(int *stack_a, int max, int size)
 
 int	pass_chunkB(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack_a[0] <= array[s_l->chunKCopyFin])
@@ -48,13 +51,45 @@ int	pass_chunkB(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 		pb(stack_a, stack_b, s_l);
 		if (stack_b[0] < stack_b[1])
 		{
-			if (stack_a[0] > array[s_l->chunKCopyFin] &&
-				stack_a[1] <= array[s_l->chunKCopyFin])
+			if (stack_a[0] > array[s_l->chunKCopyFin]
+				&& stack_a[1] <= array[s_l->chunKCopyFin])
 				ss(stack_a, stack_b, s_l);
 			else
 				sa_sb(stack_b, s_l->size_b, BB);
 		}
 		i++;
 	}
+	return (i);
+}
+
+int	pass_top(int *stack_a, int *stack_b, int *array, t_inf *s_l)
+{
+	int	i;
+	int	n;
+
+	i = 0;
+	n = -1;
+	while (stack_a[++n] > array[s_l->chunKCopyFin])
+	{
+		ra_rb(stack_a, s_l->size_a, AA);
+		i++;
+	}
+	i += pass_chunkB(stack_a, stack_b, array, s_l);
+	return (i);
+}
+
+int	pass_bot(int *stack_a, int *stack_b, int *array, t_inf *s_l)
+{
+	int	i;
+	int	n;
+
+	i = 0;
+	n = s_l->size_a + 1;
+	while (stack_a[--n] >= array[s_l->chunKCopyFin])
+	{
+		rra_rrb(stack_a, s_l->size_a, AA);
+		i++;
+	}
+	i += pass_chunkB(stack_a, stack_b, array, s_l);
 	return (i);
 }

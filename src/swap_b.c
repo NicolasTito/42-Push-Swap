@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 21:25:59 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 17:32:49 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ void	rra_rrb(int *stack, int size, int c)
 {
 	int	temp;
 	int	last;
-	int	i;
 
 	if (size < 2)
 		return ;
-	i = 0;
 	last = size - 1;
 	temp = stack[last];
 	while (--last >= 0)

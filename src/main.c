@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:56 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/01 15:37:21 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 18:02:01 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	push_swap(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
-	int i;
-
-	i = 0;
 	if (check_order(stack_a, s_l->size_a) == TRUE)
 		return ;
 	if (s_l->size_a <= 3)
@@ -48,12 +45,6 @@ void	start_stack(int *stack_a, int *stack_b, int ac, char **av)
 			exit_program(stack_a, stack_b);
 		stack_a[i] = (int)temp;
 	}
-	i = -1;
-	while (++i < ac - 1)
-	{
-		if (stack_a[i] == 0)
-			stack_a[i] = 1;
-	}
 }
 
 void	start_program(int ac, char **av)
@@ -67,7 +58,6 @@ void	start_program(int ac, char **av)
 	stack_b = (int *)malloc(sizeof(int) * (ac - 1));
 	array = (int *)malloc(sizeof(int) * (ac - 1));
 	s_l.size = ac - 1;
-
 	if (check_digit(av) == FALSE || check_repeat_number(av) == FALSE)
 	{
 		free(stack_a);
