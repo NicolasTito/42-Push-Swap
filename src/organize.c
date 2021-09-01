@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/01 18:25:35 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 20:15:21 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	int	n;
 
 	i = pass_chunkB(stack_a, stack_b, array, s_l);
+	printf("I: %d\n", i);
 	while (i < s_l->sizeChunk)
 	{
 		n = verifyTopBot(stack_a, array[s_l->chunKCopyFin], s_l->size_a);
-		printf("teste\n");
 		printf("N: %d\n", n);
-		if (n == 0)
+		if (n == TOP)
 			i += pass_top(stack_a, stack_b, array, s_l);
-		else if (n == 1)
+		else if (n == BOT)
 			i += pass_bot(stack_a, stack_b, array, s_l);
 	}
 }
@@ -59,13 +59,11 @@ void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	int	i;
 
-	i = -1;
-	while (++i < s_l->size_a)
-		printf("STACK_A: %d\n",stack_a[i]);
-	init_chunk(s_l);
 	i = 0;
+	printf("TESTE\n");
 	while (++i < s_l->chunk)
 	{
+		printf("I: %d\n", i);
 		pass_stack(stack_a, stack_b, array, s_l);
 		s_l->chunKCopyFin = s_l->chunKCopyFin + s_l->sizeChunk;
 		s_l->chunkCopyInit = s_l->chunkCopyInit + s_l->sizeChunk;
