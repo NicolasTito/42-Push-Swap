@@ -3,23 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_number.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 15:00:06 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 20:34:27 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 13:58:59 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	number_chunk(int *numberChunk, int *array, t_inf *s_l)
-{
-	int	i;
-
-	i = s_l->chunkCopyInit - 1;
-	while (++i < s_l->chunKCopyFin)
-		numberChunk[i] = array[i];
-}
 
 void	sort_number(int *array, int *stack_a, int size)
 {

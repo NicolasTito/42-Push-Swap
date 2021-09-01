@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:56 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/16 10:30:07 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 15:37:21 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	start_program(int ac, char **av)
 	{
 		free(stack_a);
 		free(stack_b);
+		free(array);
 		return ;
 	}
 	start_struct(ac, &s_l);

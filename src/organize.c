@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   organize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/26 16:15:22 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/01 15:52:12 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,18 @@ void	organize_3(int *stack_a, t_inf *s_l)
 void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	int	i;
-	int	*numberChunk;
+	int	n;
 
 	i = 0;
-	numberChunk = (int *)malloc(sizeof(int) * s_l->sizeChunk);
-	number_chunk(numberChunk, array, s_l);
-	while (stack_a[0] <= array[s_l->chunKCopyFin])
+	while (i <= s_l->sizeChunk)
 	{
-		pb(stack_a, stack_b, s_l);
-		if (stack_b[0] < stack_b[1])
-		{
-			if (stack_a[0] > s_l->sizeChunk && stack_a[1] <= s_l->sizeChunk)
-				ss(stack_a, stack_b, s_l);
-			else
-				sa_sb(stack_b, s_l->size_b, BB);
-		}
+		i = i + pass_chunkB(stack_a, stack_b, array, s_l);
+		n = verifyTopBot(stack_a, array[s_l->chunKCopyFin], s_l->size_a);
+		if (n == TOP)
+			return ;
+		else if (n == BOT)
+			return ;
 	}
-
-	free(numberChunk);
 }
 
 void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
