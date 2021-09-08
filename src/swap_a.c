@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/08/12 15:36:40 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/08 15:10:11 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ra_rb(int *stack, int size, int c)
 	if (size < 2)
 		return ;
 	temp = stack[0];
-	while (++i < size - 2)
+	while (++i < size - 1)
 		stack[i] = stack[i + 1];
 	stack[size - 1] = temp;
 	if (c == AA)

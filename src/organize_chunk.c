@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 13:56:03 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/01 20:12:28 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:21:13 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,14 @@ int	verifyTopBot(int *stack_a, int max, int size)
 	int	counterT;
 	int	counterB;
 
-	i = 0;
+	i = -1;
 	counterT = 0;
 	counterB = 1;
-	while (stack_a[i] > max)
-	{
-		i++;
+	while (stack_a[++i] > max)
 		counterT++;
-	}
-	while (stack_a[--size] > max)
-	{
-		size--;
+	i = size;
+	while (stack_a[--i] > max)
 		counterB++;
-	}
 	if (counterT <= counterB)
 		return (TOP);
 	else
@@ -61,11 +56,9 @@ int	pass_chunkB(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 int	pass_top(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	int	i;
-	int	n;
 
 	i = 0;
-	n = -1;
-	while (stack_a[++n] > array[s_l->chunKCopyFin])
+	while (stack_a[0] > array[s_l->chunKCopyFin])
 		ra_rb(stack_a, s_l->size_a, AA);
 	i += pass_chunkB(stack_a, stack_b, array, s_l);
 	return (i);
@@ -80,12 +73,21 @@ int	pass_bot(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	n = s_l->size_a;
 	while (stack_a[--n] > array[s_l->chunKCopyFin])
 		rra_rrb(stack_a, s_l->size_a, AA);
-	if(stack_a[--n] <= array[s_l->chunKCopyFin])
+	if(stack_a[n] <= array[s_l->chunKCopyFin])
 		rra_rrb(stack_a, s_l->size_a, AA);
 	i += pass_chunkB(stack_a, stack_b, array, s_l);
 
+	printf("\n\n");
 	int j = -1;
-	while (stack_b[++j] < s_l->size_b)
-		printf("STACK_B: %d\n",  stack_b[j]);
+	while(stack_a[++j])
+	{
+		printf("STACKA: %d\n", stack_a[j]);
+	}
+	printf("\n\n");
+	j = -1;
+	while(stack_b[++j])
+	{
+		printf("STACKB: %d\n", stack_b[j]);
+	}
 	return (i);
 }

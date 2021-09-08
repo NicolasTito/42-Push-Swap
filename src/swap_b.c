@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:13:20 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/01 17:32:49 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/08 13:29:58 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ void	rra_rrb(int *stack, int size, int c)
 
 	if (size < 2)
 		return ;
-	last = size - 1;
-	temp = stack[last];
-	while (--last >= 0)
-		stack[last - 1] = stack[last];
-	stack[size - 1] = temp;
+	last = size;
+	temp = stack[last - 1];
+	while (--last > 0)
+	{
+		stack[last] = stack[last - 1];
+	}
+	stack[0] = temp;
 	if (c == AA)
 		write(1, "rra\n", 4);
 	if (c == BB)
@@ -48,7 +50,7 @@ void	pb(int *stack_a, int *stack_b, t_inf *s_l)
 
 	temp = stack_a[0];
 	i = -1;
-	while (++i < s_l->size_a - 1)
+	while (++i < s_l->size_a)
 		stack_a[i] = stack_a[i + 1];
 	i = s_l->size_b + 1;
 	while (--i > 0)
