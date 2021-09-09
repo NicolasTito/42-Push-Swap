@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_init.c                                       :+:      :+:    :+:   */
+/*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:45:21 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/01 17:55:44 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/09 05:02:19 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_order(int *stack_a, int size)
+int	check_order(int *stack, int size)
 {
 	int	i;
 
 	i = -1;
 	while (++i < size - 1)
 	{
-		if (stack_a[i] > stack_a[i + 1])
+		if (stack[i] > stack[i + 1])
 			return (FALSE);
 	}
 	return (TRUE);
@@ -74,4 +74,44 @@ int	check_repeat_number(char **av)
 		i++;
 	}
 	return (TRUE);
+}
+
+int	verifyTopBot(int *stack_a, int max, int size)
+{
+	int	i;
+	int	counterT;
+	int	counterB;
+
+	i = -1;
+	counterT = 0;
+	counterB = 1;
+	while (stack_a[++i] > max)
+		counterT++;
+	i = size;
+	while (stack_a[--i] > max)
+		counterB++;
+	if (counterT <= counterB)
+		return (TOP);
+	else
+		return (BOT);
+}
+
+int	check_pass_stack(int *stack, int num, int size)
+{
+	int	i;
+	int	counterT;
+	int	counterB;
+
+	i = -1;
+	counterT = 0;
+	counterB = 1;
+	while (stack[++i] != num)
+		counterT++;
+	i = size;
+	while (stack[--i] > num)
+		counterB++;
+	if (counterT <= counterB)
+		return (TOP);
+	else
+		return (BOT);
 }

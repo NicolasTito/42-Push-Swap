@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/09/01 17:32:16 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/09/09 02:28:45 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC_PATH = ./src
 OBJ_PATH = ./obj
 
 SRC_NAME = main.c\
-			check_init.c\
+			checkers.c\
 			swap_a.c\
 			swap_b.c\
 			organize.c\
@@ -40,7 +40,7 @@ SRC_NAME = main.c\
 			organize_chunk.c
 
 SRC_BONUS = main.c\
-			check_init.c\
+			checkers.c\
 			swap_a.c\
 			swap_b.c\
 			organize.c\
