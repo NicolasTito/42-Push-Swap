@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:45:21 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/09 05:02:19 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:38:19 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	check_pass_stack(int *stack, int num, int size)
 	while (stack[++i] != num)
 		counterT++;
 	i = size;
-	while (stack[--i] > num)
+	while (stack[--i] != num)
 		counterB++;
 	if (counterT <= counterB)
 		return (TOP);

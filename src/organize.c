@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/09 05:02:50 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/09 05:42:14 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	int	i;
 	int	n;
-
+	
 	i = pass_chunkB(stack_a, stack_b, array, s_l);
 	while (i < s_l->sizeChunk)
 	{
