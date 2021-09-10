@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:09:22 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/09 05:06:23 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/10 17:05:20 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	init_chunk(t_inf *s_l)
 	else if (s_l->size >= 500)
 		s_l->chunk = 11;
 	s_l->sizeChunk = s_l->size / s_l->chunk;
-	s_l->chunKCopyFin = s_l->sizeChunk - 1;
+	s_l->chunkCopyInit = s_l->sizeChunk - 1;
+	s_l->chunKCopyFin = s_l->chunkCopyInit + s_l->sizeChunk;
 }

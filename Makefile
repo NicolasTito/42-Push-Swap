@@ -6,7 +6,7 @@
 #    By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 16:03:32 by nide-mel          #+#    #+#              #
-#    Updated: 2021/09/09 02:28:45 by nide-mel         ###   ########.fr        #
+#    Updated: 2021/09/09 19:56:11 by nide-mel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ SRC_NAME = main.c\
 			utils.c\
 			sort_number.c\
 			input_struct.c\
-			organize_chunk.c
+			organize_chunk.c\
+			pass_stack.c
 
 SRC_BONUS = main.c\
 			checkers.c\
@@ -47,7 +48,8 @@ SRC_BONUS = main.c\
 			utils.c\
 			sort_number.c\
 			input_struct.c\
-			organize_chunk.c
+			organize_chunk.c\
+			pass_stack.c
 
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC_NAME:.c=.o))
 OBJB = $(addprefix $(OBJ_PATH)/, $(SRC_BONUS:.c=.o))

@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:14:40 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/09 03:42:00 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/09 20:38:46 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int		pass_bot(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 void	pass_ult_chunk(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 int		check_pass_stack(int *stack, int num, int size);
 void	pass_stackA(int *stack_a, int *stack_b, int *array, t_inf *s_l);
+void	pass_chunkers(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 
 #endif

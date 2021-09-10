@@ -6,7 +6,7 @@
 /*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/09 05:42:14 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/10 17:02:40 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	int	i;
 	int	n;
-	
+
 	i = pass_chunkB(stack_a, stack_b, array, s_l);
 	while (i < s_l->sizeChunk)
 	{
@@ -76,17 +76,20 @@ void	pass_stackA(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 
 void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
-	int	i;
-
-	i = 0;
 	init_chunk(s_l);
-	while (++i < s_l->chunk)
+	if (s_l->chunk > 3)
+	{
+		pass_chunkers(stack_a, stack_b, array, s_l);
+		s_l->chunk -= 2;
+		s_l->chunKCopyFin += s_l->sizeChunk;
+	}
+	while (s_l->chunk > 1)
 	{
 		pass_stack(stack_a, stack_b, array, s_l);
-		s_l->chunKCopyFin = s_l->chunKCopyFin + s_l->sizeChunk;
-		s_l->chunkCopyInit = s_l->chunkCopyInit + s_l->sizeChunk;
+		s_l->chunKCopyFin += s_l->sizeChunk;
 		if (check_order(stack_a, s_l->size_a) == TRUE)
 			break ;
+		s_l->chunk--;
 	}
 	if (check_order(stack_a, s_l->size_a) == FALSE)
 	{
