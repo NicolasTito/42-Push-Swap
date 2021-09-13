@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:45:21 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/09 18:38:19 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/12 17:10:59 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,21 +76,21 @@ int	check_repeat_number(char **av)
 	return (TRUE);
 }
 
-int	verifyTopBot(int *stack_a, int max, int size)
+int	verify_t_b(int *stack_a, int max, int size)
 {
 	int	i;
-	int	counterT;
-	int	counterB;
+	int	counter_top;
+	int	counter_bot;
 
 	i = -1;
-	counterT = 0;
-	counterB = 1;
+	counter_top = 0;
+	counter_bot = 1;
 	while (stack_a[++i] > max)
-		counterT++;
+		counter_top++;
 	i = size;
 	while (stack_a[--i] > max)
-		counterB++;
-	if (counterT <= counterB)
+		counter_bot++;
+	if (counter_top <= counter_bot)
 		return (TOP);
 	else
 		return (BOT);
@@ -99,18 +99,18 @@ int	verifyTopBot(int *stack_a, int max, int size)
 int	check_pass_stack(int *stack, int num, int size)
 {
 	int	i;
-	int	counterT;
-	int	counterB;
+	int	counter_top;
+	int	counter_bot;
 
 	i = -1;
-	counterT = 0;
-	counterB = 1;
+	counter_top = 0;
+	counter_bot = 1;
 	while (stack[++i] != num)
-		counterT++;
+		counter_top++;
 	i = size;
 	while (stack[--i] != num)
-		counterB++;
-	if (counterT <= counterB)
+		counter_bot++;
+	if (counter_top <= counter_bot)
 		return (TOP);
 	else
 		return (BOT);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   organize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 02:33:41 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/10 17:02:40 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/12 17:12:38 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	int	i;
 	int	n;
 
-	i = pass_chunkB(stack_a, stack_b, array, s_l);
-	while (i < s_l->sizeChunk)
+	i = pass_chunk_b(stack_a, stack_b, array, s_l);
+	while (i < s_l->size_chunk)
 	{
-		n = verifyTopBot(stack_a, array[s_l->chunKCopyFin], s_l->size_a);
+		n = verify_t_b(stack_a, array[s_l->chunk_fin], s_l->size_a);
 		if (n == TOP)
 			i += pass_top(stack_a, stack_b, array, s_l);
 		else if (n == BOT)
@@ -53,7 +53,7 @@ void	pass_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	}
 }
 
-void	pass_stackA(int *stack_a, int *stack_b, int *array, t_inf *s_l)
+void	pass_stack_a(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 {
 	int	j;
 
@@ -81,12 +81,12 @@ void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 	{
 		pass_chunkers(stack_a, stack_b, array, s_l);
 		s_l->chunk -= 2;
-		s_l->chunKCopyFin += s_l->sizeChunk;
+		s_l->chunk_fin += s_l->size_chunk;
 	}
 	while (s_l->chunk > 1)
 	{
 		pass_stack(stack_a, stack_b, array, s_l);
-		s_l->chunKCopyFin += s_l->sizeChunk;
+		s_l->chunk_fin += s_l->size_chunk;
 		if (check_order(stack_a, s_l->size_a) == TRUE)
 			break ;
 		s_l->chunk--;
@@ -97,5 +97,5 @@ void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l)
 			pass_ult_chunk(stack_a, stack_b, array, s_l);
 		organize_3(stack_a, s_l);
 	}
-	pass_stackA(stack_a, stack_b, array, s_l);
+	pass_stack_a(stack_a, stack_b, array, s_l);
 }

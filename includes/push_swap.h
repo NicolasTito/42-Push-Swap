@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nide-mel <nide-mel@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nide-mel <nide-mel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:14:40 by nide-mel          #+#    #+#             */
-/*   Updated: 2021/09/09 20:38:46 by nide-mel         ###   ########.fr       */
+/*   Updated: 2021/09/12 17:12:38 by nide-mel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ typedef struct stack_inf
 	int	size_a;
 	int	size_b;
 	int	chunk;
-	int	sizeChunk;
-	int	chunkCopyInit;
-	int	chunKCopyFin;
+	int	size_chunk;
+	int	chunk_init;
+	int	chunk_fin;
 }		t_inf;
 
 void	exit_program(int *stack_a, int *stack_b);
@@ -53,13 +53,13 @@ void	number_chunk(int *numberChunk, int *array, t_inf *s_l);
 void	organize_stack(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 void	organize_stackB(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 void	passNumber(int *stack_a, int *stack_b, int *array, t_inf *s_l);
-int		verifyTopBot(int *stack_a, int max, int size);
-int		pass_chunkB(int *stack_a, int *stack_b, int *array, t_inf *s_l);
+int		verify_t_b(int *stack_a, int max, int size);
+int		pass_chunk_b(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 int		pass_top(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 int		pass_bot(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 void	pass_ult_chunk(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 int		check_pass_stack(int *stack, int num, int size);
-void	pass_stackA(int *stack_a, int *stack_b, int *array, t_inf *s_l);
+void	pass_stack_a(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 void	pass_chunkers(int *stack_a, int *stack_b, int *array, t_inf *s_l);
 
 #endif
